@@ -16,12 +16,17 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
 Route::get('/', [UserController::class, 'index']);
 
 
+
+Route::middleware('cors')->get('/products', function (Request $request) {
+    return $request->product();
+    Route::get('products','index');
+});
 Route::controller(ProductController::class)->group(function () {
     Route::get('products','index');
     Route::post('products','store');
@@ -31,3 +36,7 @@ Route::controller(ProductController::class)->group(function () {
 
 
 });
+
+Route::get('', ['middleware' => 'cors', function() {
+    return 'You did it!';
+}]);

@@ -16,14 +16,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // return Product::all();
-        {
-            $product = Product::all();
-            return [
-                "status" => 1,
-                "data" => $product
-            ];
-        }
+        return Product::all();
+        // {
+        //     $product = Product::all();
+        //     return [
+        //         "status" => 1,
+        //         "data" => $product
+        //     ];
+        // }
         
     }
 

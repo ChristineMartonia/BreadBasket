@@ -17,7 +17,7 @@ return [
 
 
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['GET, PUT, UPDATE,DELETE'],
 
     'allowed_origins' => ['*'],
 
@@ -29,6 +29,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];
